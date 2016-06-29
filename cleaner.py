@@ -25,6 +25,9 @@ class Cleaner():
             logging.info('Removed %s', self.file)
 
 def main():
+    if (os.path.isfile('/var/log/ubuntu-cleaner.log') is True):
+        os.remove('/var/log/ubuntu-cleaner.log')
+
     logging.basicConfig(format='[%(asctime)s][%(levelname)s] %(message)s', \
                         filename='/var/log/ubuntu-cleaner.log', \
                         level=logging.DEBUG)
