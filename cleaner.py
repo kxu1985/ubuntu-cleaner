@@ -30,11 +30,12 @@ def main():
         os.remove('/var/log/ubuntu-cleaner.log')
 
     logging.basicConfig(format='[%(asctime)s][%(levelname)s] %(message)s', \
-                        filename='/var/log/ubuntu-cleaner.log', \
+                        #filename='/var/log/ubuntu-cleaner.log', \
+                        handlers=[logging.FileHandler('/var/log/ubuntu-cleaner.log'), \
+                                    logging.StreamHandler()], \
                         level=logging.DEBUG)
     cleaner = Cleaner()
     cleaner.getList()
-    #print("\n".join(cleaner.apt_deb_list))
     cleaner.deleteFiles(cleaner.apt_cache_path, cleaner.apt_deb_list)
     
 if __name__ == "__main__":
