@@ -17,6 +17,7 @@ class Cleaner():
             if apt_deb.endswith(self.pattern):
                 self.apt_deb_list.append(apt_deb)
                 logging.info('Got %s', apt_deb)
+        logging.info('Got %d cached installation packages.', len(self.apt_deb_list))
 
     def deleteFiles(self, file_path, file_list):
         """Delete all the files in the list"""
