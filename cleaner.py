@@ -25,6 +25,7 @@ class Cleaner():
         for self.file in file_list:
             os.remove(file_path+self.file)
             logging.info('Removed %s', self.file)
+        logging.info('Removed %d old files.', len(self.apt_deb_list))
 
 def main():
     if (os.path.isfile('/var/log/ubuntu-cleaner.log') is True):
