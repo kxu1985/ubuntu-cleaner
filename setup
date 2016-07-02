@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir /usr/local/src/ubuntu-cleaner
+cp $PWD/cleaner.py $PWD/README.md /usr/local/src/ubuntu-cleaner/
+ln /usr/local/src/ubuntu-cleaner/cleaner.py /usr/local/bin/ubuntu-cleaner
+chmod 775 /usr/local/bin/ubuntu-cleaner
