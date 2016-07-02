@@ -1,5 +1,16 @@
 #!/bin/bash
 
+echo "Checking if ubuntu-cleaner was already installed..."
+if [ -f "/usr/local/bin/ubuntu-cleaner" ]; then
+    echo "Removing the binary..."
+    rm /usr/local/bin/ubuntu-cleaner
+fi
+if [ -d "/usr/local/src/ubuntu-cleaner" ]; then
+    echo "Removing the source..."
+    rm -r /usr/local/src/ubuntu-cleaner
+fi
+
+echo "Starting installing..."
 mkdir /usr/local/src/ubuntu-cleaner
 cp $PWD/cleaner.py $PWD/README.md /usr/local/src/ubuntu-cleaner/
 ln /usr/local/src/ubuntu-cleaner/cleaner.py /usr/local/bin/ubuntu-cleaner
