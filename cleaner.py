@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 import logging
-import util_apt
+import util.util_apt as util_apt
 
 class Cleaner():
     def __init__(self):
