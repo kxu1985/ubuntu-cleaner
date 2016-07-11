@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+import sys
 import os
 import logging
+sys.path.append(os.path.abspath('/usr/local/src/ubuntu-cleaner'))
 import util.util_apt as util_apt
 
 class Cleaner():
@@ -17,7 +19,6 @@ def main():
         os.remove('/var/log/ubuntu-cleaner.log')
 
     logging.basicConfig(format='[%(asctime)s][%(levelname)s] %(message)s', \
-                        #filename='/var/log/ubuntu-cleaner.log', \
                         handlers=[logging.FileHandler('/var/log/ubuntu-cleaner.log'), \
                                     logging.StreamHandler()], \
                         level=logging.DEBUG)
